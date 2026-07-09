@@ -1,0 +1,7 @@
+customer_email,customer_name,subject,description,category,priority,status
+invalid-email,Invalid User,Too short,short,unknown,urgent,new
+missing-subject@example.com,No Subject,,This description is long enough but subject is missing entirely.,technical_issue,high,new
+bad-enum@example.com,Bad Enum,Enum problem,This ticket has an unrecognised category enum value which should fail validation.,not_a_category,medium,new
+,Blank Email,Email is blank,This row has no customer_email value at all which violates the not-blank constraint.,billing_question,low,new
+too-long@example.com,Too Long Subject,"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",This subject exceeds the 200 character maximum length allowed by validation rules for tickets.,other,medium,new
+bad-priority@example.com,Bad Priority,Priority typo,This ticket has an unrecognised priority enum value which should also fail validation.,bug_report,urgentt,new

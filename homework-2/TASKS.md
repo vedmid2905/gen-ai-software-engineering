@@ -18,7 +18,7 @@ Build a customer support ticket management system that imports tickets from mult
 
 **Tools:** Use AI coding tools
 
-**Tech Stack:** Choose one - Node.js/Express, Python/Flask/FastAPI, or Java/Spring Boot
+**Tech Stack:**   Java/Spring Boot
 
 ---
 

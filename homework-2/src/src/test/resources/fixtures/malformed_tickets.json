@@ -1,0 +1,4 @@
+[
+  {
+    "customer_email": "broken@example.com",
+    "subject": "Missing closing brace"

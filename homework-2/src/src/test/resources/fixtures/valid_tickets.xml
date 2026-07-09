@@ -1,0 +1,30 @@
+<tickets>
+  <ticket>
+    <customer_email>ok@example.com</customer_email>
+    <customer_name>Jane</customer_name>
+    <subject>Login issue</subject>
+    <description>I need help with my account immediately</description>
+    <category>account_access</category>
+    <priority>high</priority>
+    <status>new</status>
+    <assigned_to>team</assigned_to>
+    <tags>login,bug</tags>
+    <source>web_form</source>
+    <browser>Chrome</browser>
+    <device_type>desktop</device_type>
+  </ticket>
+  <ticket>
+    <customer_email>zoe@example.com</customer_email>
+    <customer_name>Zoe</customer_name>
+    <subject>Refund request</subject>
+    <description>I would like a refund for my last payment please</description>
+    <category>billing_question</category>
+    <priority>medium</priority>
+    <status>new</status>
+    <assigned_to>finance</assigned_to>
+    <tags>refund,billing</tags>
+    <source>email</source>
+    <browser>Edge</browser>
+    <device_type>mobile</device_type>
+  </ticket>
+</tickets>
