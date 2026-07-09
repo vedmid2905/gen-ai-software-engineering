@@ -1,0 +1,21 @@
+$ taskflow add "Milk run" --priority 1
+[ ] #1 (p1) Milk run
+$ taskflow add "Low prio" --priority 2
+[ ] #2 (p2) Low prio
+$ taskflow add "High prio" --priority 10
+[ ] #3 (p10) High prio
+
+$ taskflow list --search Milk   (fixed: title starting with the term now matches)
+[ ] #1 (p1) Milk run
+
+$ taskflow list --sort priority   (fixed: numeric order, 10 now outranks 2)
+[ ] #3 (p10) High prio
+[ ] #2 (p2) Low prio
+[ ] #1 (p1) Milk run
+
+$ taskflow stats
+{'total': 3, 'completed': 0, 'completion_rate': 0.0}
+
+$ taskflow export out.txt --grep "x & echo pwned> pwned.txt & rem"   (injection payload)
+Exported to out.txt
+pwned.txt created? no - safe (fixed)

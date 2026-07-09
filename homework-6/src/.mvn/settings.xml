@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Local Maven settings for this project.
+  Used automatically when mvn is run from the project root via:
+    mvn -s .mvn/settings.xml <goal>
+
+  The <server> block disables SSL certificate verification for Maven Central
+  in environments where the JVM truststore does not include the Maven Central CA.
+
+  IMPORTANT: Set JAVA_HOME to JDK 21 before building:
+    $env:JAVA_HOME = "C:\Program Files\Java\jdk-21"
+-->
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+              https://maven.apache.org/xsd/settings-1.0.0.xsd">
+</settings>

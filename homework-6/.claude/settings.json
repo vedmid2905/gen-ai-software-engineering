@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Start-Process \"http://localhost:8080/\")",
+      "Bash(find /c/Users/home/.m2/repository -iname \"*jacoco*\" 2>/dev/null | head -20 *)",
+      "Read(//c/Users/home/.m2/repository/**)",
+      "Bash(awk -F, 'NR>1{missed+=$8; covered+=$9} END{printf \"LINE covered=%d missed=%d ratio=%.2f%%\\\\n\", covered, missed, 100*covered/\\(covered+missed\\)}' target/site/jacoco/jacoco.csv)",
+      "Skill(update-config)",
+      "Skill(update-config:*)",
+      "Bash(jq --version)",
+      "Bash(mkdir -p \"d:/gen-ai-software-engineering/homework-6/.claude/hooks\")",
+      "Bash(chmod +x \"d:/gen-ai-software-engineering/homework-6/.claude/hooks/check-coverage.sh\")",
+      "Bash(bash \"d:/gen-ai-software-engineering/homework-6/.claude/hooks/check-coverage.sh\")",
+      "Bash(python -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('VALID JSON:', d\\)\")"
+    ],
+    "additionalDirectories": [
+      "d:\\gen-ai-software-engineering\\homework-6\\.claude"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh \"d:/gen-ai-software-engineering/homework-6/.claude/hooks/check-coverage.sh\"",
+            "if": "Bash(git push*)",
+            "shell": "bash",
+            "timeout": 180,
+            "statusMessage": "Checking JaCoCo coverage gate (>=80%) before git push..."
+          }
+        ]
+      }
+    ]
+  }
+}

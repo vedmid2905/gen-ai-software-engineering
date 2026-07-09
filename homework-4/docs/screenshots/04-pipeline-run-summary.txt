@@ -1,0 +1,33 @@
+=== Pipeline artifacts produced for bug 001 (context/bugs/001/) ===
+
+context/bugs/001/bug-context.md
+context/bugs/001/fix-summary.md
+context/bugs/001/implementation-plan.md
+context/bugs/001/research/codebase-research.md
+context/bugs/001/research/verified-research.md
+context/bugs/001/security-report.md
+context/bugs/001/test-report.md
+
+=== Test suite before vs after (bug-context.md documents the seed; pipeline fixed it) ===
+
+Baseline suite alone (pre-existing tests, still pass post-fix):
+test_stats_with_completed_tasks (test_store.TaskStoreBaselineTests) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.001s
+
+OK
+----------------------------------------------------------------------
+Ran 3 tests in 0.011s
+
+OK
+[ ] #1 (p1) Buy milk
+Exported to C:\Users\home\AppData\Local\Temp\tmp1z9nqvqm\out.txt
+
+Full suite including generated tests for this fix:
+----------------------------------------------------------------------
+Ran 20 tests in 0.022s
+
+OK
+[ ] #1 (p1) Buy milk
+Exported to C:\Users\home\AppData\Local\Temp\tmpb3ira0ss\out.txt

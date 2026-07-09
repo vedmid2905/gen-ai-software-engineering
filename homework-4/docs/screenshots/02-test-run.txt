@@ -1,0 +1,28 @@
+test_export_grep_filters_by_plain_substring (test_bug_001_fixes.ExportCommandInjectionFixTests) ... ok
+test_export_grep_term_is_not_shell_interpreted (test_bug_001_fixes.ExportCommandInjectionFixTests) ... ok
+test_export_without_grep_writes_all_titles (test_bug_001_fixes.ExportCommandInjectionFixTests) ... ok
+test_double_digit_priority_outranks_single_digit (test_bug_001_fixes.PrioritySortFixTests) ... ok
+test_sorted_by_priority_is_fully_descending (test_bug_001_fixes.PrioritySortFixTests) ... ok
+test_search_is_case_insensitive_at_start (test_bug_001_fixes.SearchOffByOneFixTests) ... ok
+test_search_matches_title_starting_with_term (test_bug_001_fixes.SearchOffByOneFixTests) ... ok
+test_search_no_match_returns_empty_list (test_bug_001_fixes.SearchOffByOneFixTests) ... ok
+test_search_still_matches_mid_string_term (test_bug_001_fixes.SearchOffByOneFixTests) ... ok
+test_add_prints_task (test_cli.CliBaselineTests) ... ok
+test_complete_unknown_task_returns_error_code (test_cli.CliBaselineTests) ... No such task: 999
+ok
+test_export_without_grep_writes_file (test_cli.CliBaselineTests) ... ok
+test_add_and_get (test_store.TaskStoreBaselineTests) ... ok
+test_complete_marks_task (test_store.TaskStoreBaselineTests) ... ok
+test_complete_missing_returns_false (test_store.TaskStoreBaselineTests) ... ok
+test_get_missing_returns_none (test_store.TaskStoreBaselineTests) ... ok
+test_search_matches_substring_not_at_start (test_store.TaskStoreBaselineTests) ... ok
+test_sorted_by_priority_single_digit (test_store.TaskStoreBaselineTests) ... ok
+test_stats_empty_store (test_store.TaskStoreBaselineTests) ... ok
+test_stats_with_completed_tasks (test_store.TaskStoreBaselineTests) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.023s
+
+OK
+[ ] #1 (p1) Buy milk
+Exported to C:\Users\home\AppData\Local\Temp\tmpcb2f5_z9\out.txt

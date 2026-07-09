@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Banking Console</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --panel: #171a21;
+    --border: #2a2e37;
+    --text: #e6e8ec;
+    --muted: #9aa1ac;
+    --accent: #4f8cff;
+    --ok: #3ecf8e;
+    --warn: #f5b544;
+    --bad: #f0576b;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f5f6f8;
+      --panel: #ffffff;
+      --border: #dfe3e8;
+      --text: #1a1d23;
+      --muted: #5c6370;
+      --accent: #3366e6;
+      --ok: #1f9d63;
+      --warn: #b9790a;
+      --bad: #c92a3c;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  header {
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--border);
+  }
+  header h1 { margin: 0 0 4px; font-size: 1.3rem; }
+  header p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+
+  nav {
+    display: flex;
+    gap: 4px;
+    padding: 0 28px;
+    border-bottom: 1px solid var(--border);
+  }
+  nav button {
+    background: none;
+    border: none;
+    color: var(--muted);
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+  }
+  nav button.active {
+    color: var(--text);
+    border-bottom-color: var(--accent);
+  }
+
+  main { padding: 24px 28px; max-width: 1100px; margin: 0 auto; }
+  .view { display: none; }
+  .view.active { display: block; }
+
+  .grid { display: grid; grid-template-columns: 340px 1fr; gap: 20px; align-items: start; }
+  @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } }
+
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px;
+    margin-bottom: 20px;
+  }
+  .panel h2 { margin: 0 0 14px; font-size: 1rem; }
+
+  label { display: block; font-size: 0.82rem; color: var(--muted); margin: 10px 0 4px; }
+  input, select {
+    width: 100%;
+    padding: 8px 10px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    font-size: 0.9rem;
+  }
+  button.primary {
+    margin-top: 14px;
+    width: 100%;
+    padding: 10px;
+    background: var(--accent);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  button.primary:hover { opacity: 0.9; }
+  button.ghost {
+    padding: 8px 14px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    cursor: pointer;
+    font-size: 0.85rem;
+  }
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+  th { color: var(--muted); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; }
+  tr:last-child td { border-bottom: none; }
+
+  .badge { padding: 2px 8px; border-radius: 999px; font-size: 0.75rem; font-weight: 600; }
+  .badge.completed, .badge.approved, .badge.validated { background: rgba(62,207,142,0.15); color: var(--ok); }
+  .badge.flagged { background: rgba(245,181,68,0.15); color: var(--warn); }
+  .badge.rejected, .badge.failed { background: rgba(240,87,107,0.15); color: var(--bad); }
+
+  .toolbar { display: flex; gap: 8px; align-items: center; margin-bottom: 12px; flex-wrap: wrap; }
+  .toolbar > * { flex: none; }
+  .toolbar input, .toolbar select { width: auto; min-width: 120px; }
+
+  .tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px; }
+  @media (max-width: 700px) { .tiles { grid-template-columns: repeat(2, 1fr); } }
+  .tile { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
+  .tile .value { font-size: 1.6rem; font-weight: 700; }
+  .tile .label { color: var(--muted); font-size: 0.78rem; text-transform: uppercase; }
+
+  .banner {
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    margin-bottom: 14px;
+    display: none;
+  }
+  .banner.error { background: rgba(240,87,107,0.12); color: var(--bad); border: 1px solid rgba(240,87,107,0.3); display: block; }
+  .banner.info { background: rgba(79,140,255,0.12); color: var(--accent); border: 1px solid rgba(79,140,255,0.3); display: block; }
+
+  .empty { color: var(--muted); font-size: 0.85rem; padding: 12px 0; }
+  code { font-size: 0.8rem; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Banking Console</h1>
+  <p>Frontend shell for the Transactions API and the multi-agent banking pipeline</p>
+</header>
+
+<nav>
+  <button class="tab-btn active" data-view="transactions">Transactions</button>
+  <button class="tab-btn" data-view="pipeline">Pipeline</button>
+</nav>
+
+<main>
+
+  <!-- ===================== TRANSACTIONS VIEW ===================== -->
+  <section id="view-transactions" class="view active">
+    <div id="tx-banner" class="banner"></div>
+
+    <div class="grid">
+      <div>
+        <div class="panel">
+          <h2>New transaction</h2>
+          <form id="tx-form">
+            <label for="tx-type">Type</label>
+            <select id="tx-type">
+              <option value="deposit">deposit</option>
+              <option value="withdrawal">withdrawal</option>
+              <option value="transfer" selected>transfer</option>
+            </select>
+
+            <label for="tx-amount">Amount</label>
+            <input id="tx-amount" type="text" placeholder="e.g. 1500.00" value="100.00">
+
+            <label for="tx-currency">Currency</label>
+            <select id="tx-currency">
+              <option>USD</option><option>EUR</option><option>GBP</option><option>JPY</option>
+              <option>CAD</option><option>AUD</option><option>CHF</option>
+            </select>
+
+            <label for="tx-from">From account</label>
+            <input id="tx-from" type="text" placeholder="ACC-AAAAA" value="ACC-10001">
+
+            <label for="tx-to">To account</label>
+            <input id="tx-to" type="text" placeholder="ACC-BBBBB" value="ACC-20001">
+
+            <button type="submit" class="primary">Create transaction</button>
+          </form>
+        </div>
+
+        <div class="panel">
+          <h2>Account lookup</h2>
+          <label for="acct-id">Account ID</label>
+          <input id="acct-id" type="text" placeholder="ACC-10001" value="ACC-10001">
+          <button id="acct-lookup-btn" class="primary">Get balance &amp; summary</button>
+          <div id="acct-result" style="margin-top:14px;"></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="toolbar">
+          <h2 style="margin:0; flex:1;">Transactions</h2>
+          <select id="tx-filter-type">
+            <option value="">all types</option>
+            <option value="deposit">deposit</option>
+            <option value="withdrawal">withdrawal</option>
+            <option value="transfer">transfer</option>
+          </select>
+          <button id="tx-refresh-btn" class="ghost">Refresh</button>
+        </div>
+        <div id="tx-table-wrap"><div class="empty">No transactions loaded yet.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PIPELINE VIEW ===================== -->
+  <section id="view-pipeline" class="view">
+    <div id="pipeline-banner" class="banner"></div>
+
+    <div class="panel">
+      <div class="toolbar">
+        <button id="pipeline-run-btn" class="primary" style="margin:0; width:auto; padding:10px 18px;">Run pipeline</button>
+        <button id="pipeline-refresh-btn" class="ghost">Load last results</button>
+        <span id="pipeline-status" style="color:var(--muted); font-size:0.85rem;"></span>
+      </div>
+    </div>
+
+    <div class="tiles">
+      <div class="tile"><div class="value" id="tile-total">–</div><div class="label">Total</div></div>
+      <div class="tile"><div class="value" id="tile-approved">–</div><div class="label">Approved</div></div>
+      <div class="tile"><div class="value" id="tile-flagged">–</div><div class="label">Flagged</div></div>
+      <div class="tile"><div class="value" id="tile-rejected">–</div><div class="label">Rejected</div></div>
+    </div>
+
+    <div class="panel">
+      <h2>Results</h2>
+      <div id="pipeline-table-wrap"><div class="empty">No results yet — run the pipeline or load the last run.</div></div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+const api = {
+  async post(url, body) { return handle(fetch(url, { method: 'POST', headers: {'Content-Type':'application/json'}, body: body ? JSON.stringify(body) : undefined })); },
+  async get(url) { return handle(fetch(url)); },
+};
+
+async function handle(promise) {
+  const res = await promise;
+  const text = await res.text();
+  const data = text ? JSON.parse(text) : null;
+  if (!res.ok) {
+    const err = new Error((data && (data.error || data.message)) || res.statusText);
+    err.details = data;
+    err.status = res.status;
+    throw err;
+  }
+  return data;
+}
+
+function banner(elId, message, kind) {
+  const el = document.getElementById(elId);
+  if (!message) { el.className = 'banner'; el.textContent = ''; return; }
+  el.className = 'banner ' + kind;
+  el.textContent = message;
+}
+
+function badge(status) {
+  return `<span class="badge ${status}">${status}</span>`;
+}
+
+// ---------- Tabs ----------
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('view-' + btn.dataset.view).classList.add('active');
+  });
+});
+
+// ---------- Transactions ----------
+document.getElementById('tx-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  banner('tx-banner', '', '');
+  const type = document.getElementById('tx-type').value;
+  const body = {
+    type,
+    amount: document.getElementById('tx-amount').value,
+    currency: document.getElementById('tx-currency').value,
+    fromAccount: type === 'deposit' ? null : document.getElementById('tx-from').value,
+    toAccount: type === 'withdrawal' ? null : document.getElementById('tx-to').value,
+  };
+  try {
+    await api.post('/transactions', body);
+    banner('tx-banner', 'Transaction created.', 'info');
+    loadTransactions();
+  } catch (err) {
+    banner('tx-banner', formatError(err), 'error');
+  }
+});
+
+function formatError(err) {
+  if (err.details && Array.isArray(err.details.details) && err.details.details.length) {
+    return err.details.details.map(d => `${d.field}: ${d.message}`).join('; ');
+  }
+  return err.message;
+}
+
+async function loadTransactions() {
+  const type = document.getElementById('tx-filter-type').value;
+  const url = '/transactions' + (type ? `?type=${encodeURIComponent(type)}` : '');
+  try {
+    const rows = await api.get(url);
+    renderTransactions(rows);
+  } catch (err) {
+    banner('tx-banner', formatError(err), 'error');
+  }
+}
+
+function renderTransactions(rows) {
+  const wrap = document.getElementById('tx-table-wrap');
+  if (!rows.length) { wrap.innerHTML = '<div class="empty">No transactions yet.</div>'; return; }
+  wrap.innerHTML = `<table>
+    <thead><tr><th>ID</th><th>Type</th><th>Amount</th><th>From</th><th>To</th><th>Status</th><th>Time</th></tr></thead>
+    <tbody>${rows.map(r => `
+      <tr>
+        <td><code>${r.id.slice(0,8)}</code></td>
+        <td>${r.type}</td>
+        <td>${r.amount} ${r.currency}</td>
+        <td>${r.fromAccount ?? '—'}</td>
+        <td>${r.toAccount ?? '—'}</td>
+        <td>${badge(r.status)}</td>
+        <td>${new Date(r.timestamp).toLocaleString()}</td>
+      </tr>`).join('')}
+    </tbody></table>`;
+}
+
+document.getElementById('tx-refresh-btn').addEventListener('click', loadTransactions);
+document.getElementById('tx-filter-type').addEventListener('change', loadTransactions);
+
+document.getElementById('acct-lookup-btn').addEventListener('click', async () => {
+  const accountId = document.getElementById('acct-id').value.trim();
+  const resultEl = document.getElementById('acct-result');
+  resultEl.innerHTML = '';
+  banner('tx-banner', '', '');
+  try {
+    const [balance, summary] = await Promise.all([
+      api.get(`/accounts/${encodeURIComponent(accountId)}/balance`),
+      api.get(`/accounts/${encodeURIComponent(accountId)}/summary`),
+    ]);
+    const balanceHtml = balance.balances
+      ? balance.balances.map(b => `${b.currency}: <strong>${b.balance}</strong>`).join('<br>')
+      : `${balance.currency}: <strong>${balance.balance}</strong>`;
+    resultEl.innerHTML = `
+      <div style="font-size:0.85rem; line-height:1.6;">
+        <div><span style="color:var(--muted)">Balance</span><br>${balanceHtml}</div>
+        <div style="margin-top:10px;"><span style="color:var(--muted)">Summary</span><br>
+          Deposits: ${summary.totalDeposits} · Withdrawals: ${summary.totalWithdrawals}<br>
+          ${summary.transactionCount} transaction(s), last on ${new Date(summary.mostRecentTransactionDate).toLocaleString()}
+        </div>
+      </div>`;
+  } catch (err) {
+    banner('tx-banner', formatError(err), 'error');
+  }
+});
+
+// ---------- Pipeline ----------
+function renderSummary(summary) {
+  document.getElementById('tile-total').textContent = summary.totalProcessed;
+  document.getElementById('tile-approved').textContent = summary.approved;
+  document.getElementById('tile-flagged').textContent = summary.flagged;
+  document.getElementById('tile-rejected').textContent = summary.rejected;
+  renderPipelineResults(summary.results || []);
+}
+
+function renderPipelineResults(rows) {
+  const wrap = document.getElementById('pipeline-table-wrap');
+  if (!rows.length) { wrap.innerHTML = '<div class="empty">No results yet.</div>'; return; }
+  wrap.innerHTML = `<table>
+    <thead><tr><th>Transaction</th><th>Status</th><th>Decision</th><th>Risk score</th><th>Reason</th><th>Agent</th></tr></thead>
+    <tbody>${rows.map(r => `
+      <tr>
+        <td>${r.transactionId}</td>
+        <td>${badge(r.status)}</td>
+        <td>${r.decision ?? '—'}</td>
+        <td>${r.riskScore ?? '—'}</td>
+        <td>${r.reason ?? '—'}</td>
+        <td><code>${r.audit ? r.audit.agent : '—'}</code></td>
+      </tr>`).join('')}
+    </tbody></table>`;
+}
+
+document.getElementById('pipeline-run-btn').addEventListener('click', async () => {
+  const status = document.getElementById('pipeline-status');
+  banner('pipeline-banner', '', '');
+  status.textContent = 'Running…';
+  try {
+    const summary = await api.post('/api/pipeline/run');
+    renderSummary(summary);
+    status.textContent = 'Last run: ' + new Date(summary.generatedAt).toLocaleString();
+  } catch (err) {
+    banner('pipeline-banner', err.message, 'error');
+    status.textContent = '';
+  }
+});
+
+document.getElementById('pipeline-refresh-btn').addEventListener('click', async () => {
+  banner('pipeline-banner', '', '');
+  try {
+    const summary = await api.get('/api/pipeline/summary');
+    renderSummary(summary);
+    document.getElementById('pipeline-status').textContent = 'Last run: ' + new Date(summary.generatedAt).toLocaleString();
+  } catch (err) {
+    if (err.status === 404) {
+      banner('pipeline-banner', 'No pipeline run found yet. Click "Run pipeline".', 'info');
+    } else {
+      banner('pipeline-banner', err.message, 'error');
+    }
+  }
+});
+
+// initial load
+loadTransactions();
+</script>
+
+</body>
+</html>
