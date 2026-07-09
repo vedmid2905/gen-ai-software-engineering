@@ -1,0 +1,87 @@
+### Banking Transactions API — Sample Requests
+### Open this file in VS Code with the "REST Client" extension and click "Send Request"
+### above any block below. The server must be running on http://localhost:8080
+### (see ../HOWTORUN.md).
+
+@baseUrl = http://localhost:8080
+
+### Create a deposit
+POST {{baseUrl}}/transactions
+Content-Type: application/json
+
+{
+  "type": "deposit",
+  "toAccount": "ACC-12345",
+  "amount": 500.00,
+  "currency": "USD"
+}
+
+### Create a withdrawal
+POST {{baseUrl}}/transactions
+Content-Type: application/json
+
+{
+  "type": "withdrawal",
+  "fromAccount": "ACC-12345",
+  "amount": 75.25,
+  "currency": "USD"
+}
+
+### Create a transfer
+POST {{baseUrl}}/transactions
+Content-Type: application/json
+
+{
+  "type": "transfer",
+  "fromAccount": "ACC-12345",
+  "toAccount": "ACC-67890",
+  "amount": 100.50,
+  "currency": "USD"
+}
+
+### Validation error example — negative amount and unsupported currency
+POST {{baseUrl}}/transactions
+Content-Type: application/json
+
+{
+  "type": "deposit",
+  "toAccount": "ACC-12345",
+  "amount": -5,
+  "currency": "XXX"
+}
+
+### List all transactions
+GET {{baseUrl}}/transactions
+
+### Filter by account
+GET {{baseUrl}}/transactions?accountId=ACC-12345
+
+### Filter by type
+GET {{baseUrl}}/transactions?type=deposit
+
+### Filter by date range (combine with other filters freely)
+GET {{baseUrl}}/transactions?from=2024-01-01&to=2030-12-31
+
+### Get a transaction by id — replace {id} with a real id from a create response above
+GET {{baseUrl}}/transactions/{id}
+
+### Get a transaction by a malformed id -> 400
+GET {{baseUrl}}/transactions/not-a-uuid
+
+### Get a transaction that doesn't exist -> 404
+GET {{baseUrl}}/transactions/00000000-0000-4000-8000-000000000000
+
+### Get account balance
+### Note: newly created transactions start as "pending"; only "completed"
+### transactions count toward the balance, so this returns 0.00 unless the
+### in-memory data has been seeded with completed transactions.
+GET {{baseUrl}}/accounts/ACC-12345/balance
+
+### Get account balance — malformed account id -> 400
+GET {{baseUrl}}/accounts/bad-id/balance
+
+### Get account balance — unknown account -> 404
+GET {{baseUrl}}/accounts/ACC-99999/balance
+
+### Get account summary
+GET {{baseUrl}}/accounts/ACC-12345/summary

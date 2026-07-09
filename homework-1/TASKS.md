@@ -17,10 +17,7 @@ By completing this homework, you will:
 ---
 
 ### Technology Stack (Choose One)
-- **Node.js** 
-- **Python** 
-- Other technolgies which you will comfortable with
-
+Java 21, Spring
 ---
 
 ## 📝 Tasks
