@@ -1,0 +1,3 @@
+customer_email,customer_name,subject,description,category,priority,status,assigned_to,tags,source,browser,device_type
+user@example.com,Jane Doe,Login issue,Need help with the account login process,account_access,urgent,new,team,login;bug,web_form,Chrome,desktop
+ok@example.com,John Roe,Payment question,I have a question about my last invoice charge,billing_question,medium,new,finance,billing,email,Firefox,mobile

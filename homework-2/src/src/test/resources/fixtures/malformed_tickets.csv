@@ -1,0 +1,3 @@
+customer_email,customer_name,subject,description
+"unterminated@example.com,Broken Quote,Bad row,This row has an unterminated quoted field
+ok@example.com,Fine User,This row is fine,This row should still parse correctly after the bad one

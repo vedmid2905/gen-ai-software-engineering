@@ -1,0 +1,47 @@
+<tickets>
+  <ticket>
+    <customer_email>bad-email</customer_email>
+    <customer_name>Broken User</customer_name>
+    <subject>Bad</subject>
+    <description>short</description>
+    <category>unknown</category>
+    <priority>critical</priority>
+    <status>new</status>
+  </ticket>
+  <ticket>
+    <customer_email>missing.subject@example.com</customer_email>
+    <customer_name>No Subject</customer_name>
+    <subject></subject>
+    <description>This description is long enough but the subject element is empty.</description>
+    <category>technical_issue</category>
+    <priority>high</priority>
+    <status>new</status>
+  </ticket>
+  <ticket>
+    <customer_email>bad.enum@example.com</customer_email>
+    <customer_name>Bad Enum</customer_name>
+    <subject>Unrecognised enum value</subject>
+    <description>This ticket element uses a category value that is not part of the allowed enum set and should fail parsing.</description>
+    <category>not_a_real_category</category>
+    <priority>medium</priority>
+    <status>new</status>
+  </ticket>
+  <ticket>
+    <customer_email>short.desc@example.com</customer_email>
+    <customer_name>Short Description</customer_name>
+    <subject>Description too short</subject>
+    <description>tiny</description>
+    <category>bug_report</category>
+    <priority>low</priority>
+    <status>new</status>
+  </ticket>
+  <ticket>
+    <customer_email>bad.priority@example.com</customer_email>
+    <customer_name>Bad Priority</customer_name>
+    <subject>Unrecognised priority value</subject>
+    <description>This ticket element uses a priority value that does not exist in the Priority enum.</description>
+    <category>other</category>
+    <priority>urgentt</priority>
+    <status>new</status>
+  </ticket>
+</tickets>

@@ -1,0 +1,30 @@
+[
+  {
+    "customer_email": "ok@example.com",
+    "customer_name": "Jane",
+    "subject": "Login issue",
+    "description": "I need help with my account immediately",
+    "category": "account_access",
+    "priority": "high",
+    "status": "new",
+    "assigned_to": "team",
+    "tags": ["login"],
+    "source": "web_form",
+    "browser": "Chrome",
+    "device_type": "desktop"
+  },
+  {
+    "customer_email": "bob@example.com",
+    "customer_name": "Bob",
+    "subject": "Feature idea",
+    "description": "It would be great to have dark mode support",
+    "category": "feature_request",
+    "priority": "low",
+    "status": "new",
+    "assigned_to": "product",
+    "tags": ["feature"],
+    "source": "chat",
+    "browser": "Safari",
+    "device_type": "tablet"
+  }
+]

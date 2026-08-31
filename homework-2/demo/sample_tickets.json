@@ -1,0 +1,362 @@
+[
+  {
+    "customer_id": "cust-1050",
+    "customer_email": "carlos.diaz50@example.com",
+    "customer_name": "Carlos Diaz",
+    "subject": "Refund request for cancelled plan #51",
+    "description": "I cancelled my plan last week but have not received my refund yet.",
+    "category": "billing_question",
+    "priority": "high",
+    "status": "in_progress",
+    "assigned_to": "finance",
+    "tags": [
+      "billing",
+      "refund"
+    ],
+    "source": "api",
+    "browser": "Firefox",
+    "device_type": "desktop"
+  },
+  {
+    "customer_id": "cust-1051",
+    "customer_email": "yuki.tanaka51@example.com",
+    "customer_name": "Yuki Tanaka",
+    "subject": "Need a new feature #52",
+    "description": "I would like a dark mode option added to the application settings.",
+    "category": "feature_request",
+    "priority": "high",
+    "status": "resolved",
+    "assigned_to": "product-team",
+    "tags": [
+      "enhancement",
+      "ui"
+    ],
+    "source": "web_form",
+    "browser": "Safari",
+    "device_type": "mobile"
+  },
+  {
+    "customer_id": "cust-1052",
+    "customer_email": "fatima.hassan52@example.com",
+    "customer_name": "Fatima Hassan",
+    "subject": "Bug: attachments fail to upload #53",
+    "description": "Attempting to upload attachments larger than 5MB fails with no error message.",
+    "category": "bug_report",
+    "priority": "low",
+    "status": "closed",
+    "assigned_to": "qa-team",
+    "tags": [
+      "defect",
+      "bug"
+    ],
+    "source": "web_form",
+    "browser": "Safari",
+    "device_type": "desktop"
+  },
+  {
+    "customer_id": "cust-1053",
+    "customer_email": "noah.okafor53@example.com",
+    "customer_name": "Noah Okafor",
+    "subject": "Miscellaneous request #54",
+    "description": "I have a request that does not really fit any other category.",
+    "category": "other",
+    "priority": "medium",
+    "status": "new",
+    "assigned_to": "support-team",
+    "tags": [
+      "general",
+      "feedback"
+    ],
+    "source": "api",
+    "browser": "Safari",
+    "device_type": "mobile"
+  },
+  {
+    "customer_id": "cust-1054",
+    "customer_email": "priya.singh54@example.com",
+    "customer_name": "Priya Singh",
+    "subject": "Two-factor codes never arrive #55",
+    "description": "I never receive the two-factor authentication codes by SMS so I cannot log in.",
+    "category": "account_access",
+    "priority": "urgent",
+    "status": "resolved",
+    "assigned_to": "security-team",
+    "tags": [
+      "security",
+      "password"
+    ],
+    "source": "web_form",
+    "browser": "Edge",
+    "device_type": "desktop"
+  },
+  {
+    "customer_id": "cust-1055",
+    "customer_email": "leo.novak55@example.com",
+    "customer_name": "Leo Novak",
+    "subject": "Slow performance during peak hours #56",
+    "description": "The application becomes extremely slow and unresponsive during peak business hours.",
+    "category": "technical_issue",
+    "priority": "high",
+    "status": "waiting_customer",
+    "assigned_to": "engineering",
+    "tags": [
+      "sync",
+      "error"
+    ],
+    "source": "api",
+    "browser": "Opera",
+    "device_type": "mobile"
+  },
+  {
+    "customer_id": "cust-1056",
+    "customer_email": "maria.silva56@example.com",
+    "customer_name": "Maria Silva",
+    "subject": "Payment failed #57",
+    "description": "My latest payment failed and I need a refund processed as soon as possible.",
+    "category": "billing_question",
+    "priority": "medium",
+    "status": "closed",
+    "assigned_to": "finance",
+    "tags": [
+      "invoice",
+      "billing"
+    ],
+    "source": "chat",
+    "browser": "Safari",
+    "device_type": "mobile"
+  },
+  {
+    "customer_id": "cust-1057",
+    "customer_email": "sam.cohen57@example.com",
+    "customer_name": "Sam Cohen",
+    "subject": "Request for keyboard shortcuts #58",
+    "description": "Please consider adding keyboard shortcuts for common actions in the editor.",
+    "category": "feature_request",
+    "priority": "high",
+    "status": "in_progress",
+    "assigned_to": "product-team",
+    "tags": [
+      "suggestion",
+      "enhancement"
+    ],
+    "source": "chat",
+    "browser": "Firefox",
+    "device_type": "tablet"
+  },
+  {
+    "customer_id": "cust-1058",
+    "customer_email": "ivy.park58@example.com",
+    "customer_name": "Ivy Park",
+    "subject": "Bug: attachments fail to upload #59",
+    "description": "Attempting to upload attachments larger than 5MB fails with no error message.",
+    "category": "bug_report",
+    "priority": "medium",
+    "status": "resolved",
+    "assigned_to": "qa-team",
+    "tags": [
+      "bug",
+      "regression"
+    ],
+    "source": "api",
+    "browser": "Firefox",
+    "device_type": "mobile"
+  },
+  {
+    "customer_id": "cust-1059",
+    "customer_email": "ben.bianchi59@example.com",
+    "customer_name": "Ben Bianchi",
+    "subject": "Miscellaneous request #60",
+    "description": "I have a request that does not really fit any other category.",
+    "category": "other",
+    "priority": "medium",
+    "status": "resolved",
+    "assigned_to": "support-team",
+    "tags": [
+      "feedback",
+      "inquiry"
+    ],
+    "source": "email",
+    "browser": "Opera",
+    "device_type": "mobile"
+  },
+  {
+    "customer_id": "cust-1060",
+    "customer_email": "zoe.doe60@example.com",
+    "customer_name": "Zoe Doe",
+    "subject": "Locked out after 2FA change #61",
+    "description": "I changed my two-factor authentication device and now I can't access my account at all.",
+    "category": "account_access",
+    "priority": "urgent",
+    "status": "waiting_customer",
+    "assigned_to": "security-team",
+    "tags": [
+      "2fa",
+      "login"
+    ],
+    "source": "email",
+    "browser": "Safari",
+    "device_type": "desktop"
+  },
+  {
+    "customer_id": "cust-1061",
+    "customer_email": "alex.smith61@example.com",
+    "customer_name": "Alex Smith",
+    "subject": "Dashboard fails to load #62",
+    "description": "The dashboard shows a blank white screen and never finishes loading.",
+    "category": "technical_issue",
+    "priority": "high",
+    "status": "new",
+    "assigned_to": "engineering",
+    "tags": [
+      "error",
+      "sync"
+    ],
+    "source": "chat",
+    "browser": "Opera",
+    "device_type": "desktop"
+  },
+  {
+    "customer_id": "cust-1062",
+    "customer_email": "nina.lee62@example.com",
+    "customer_name": "Nina Lee",
+    "subject": "Refund request for cancelled plan #63",
+    "description": "I cancelled my plan last week but have not received my refund yet.",
+    "category": "billing_question",
+    "priority": "low",
+    "status": "closed",
+    "assigned_to": "finance",
+    "tags": [
+      "refund",
+      "invoice"
+    ],
+    "source": "chat",
+    "browser": "Edge",
+    "device_type": "mobile"
+  },
+  {
+    "customer_id": "cust-1063",
+    "customer_email": "david.brown63@example.com",
+    "customer_name": "David Brown",
+    "subject": "Suggestion for export options #64",
+    "description": "It would be great to have a CSV export option for reports, just a minor suggestion.",
+    "category": "feature_request",
+    "priority": "high",
+    "status": "new",
+    "assigned_to": "product-team",
+    "tags": [
+      "feature",
+      "ui"
+    ],
+    "source": "email",
+    "browser": "Firefox",
+    "device_type": "tablet"
+  },
+  {
+    "customer_id": "cust-1064",
+    "customer_email": "chloe.green64@example.com",
+    "customer_name": "Chloe Green",
+    "subject": "Bug: attachments fail to upload #65",
+    "description": "Attempting to upload attachments larger than 5MB fails with no error message.",
+    "category": "bug_report",
+    "priority": "low",
+    "status": "new",
+    "assigned_to": "qa-team",
+    "tags": [
+      "regression",
+      "bug"
+    ],
+    "source": "chat",
+    "browser": "Firefox",
+    "device_type": "mobile"
+  },
+  {
+    "customer_id": "cust-1065",
+    "customer_email": "ravi.chen65@example.com",
+    "customer_name": "Ravi Chen",
+    "subject": "Miscellaneous request #66",
+    "description": "I have a request that does not really fit any other category.",
+    "category": "other",
+    "priority": "medium",
+    "status": "resolved",
+    "assigned_to": "support-team",
+    "tags": [
+      "inquiry",
+      "feedback"
+    ],
+    "source": "phone",
+    "browser": "Edge",
+    "device_type": "desktop"
+  },
+  {
+    "customer_id": "cust-1066",
+    "customer_email": "emma.west66@example.com",
+    "customer_name": "Emma West",
+    "subject": "Security alert on my account #67",
+    "description": "I received a security alert about a login attempt I did not make, this is critical.",
+    "category": "account_access",
+    "priority": "low",
+    "status": "waiting_customer",
+    "assigned_to": "security-team",
+    "tags": [
+      "security",
+      "2fa"
+    ],
+    "source": "api",
+    "browser": "Opera",
+    "device_type": "mobile"
+  },
+  {
+    "customer_id": "cust-1067",
+    "customer_email": "lucas.kim67@example.com",
+    "customer_name": "Lucas Kim",
+    "subject": "Dashboard fails to load #68",
+    "description": "The dashboard shows a blank white screen and never finishes loading.",
+    "category": "technical_issue",
+    "priority": "medium",
+    "status": "resolved",
+    "assigned_to": "engineering",
+    "tags": [
+      "error",
+      "performance"
+    ],
+    "source": "api",
+    "browser": "Firefox",
+    "device_type": "mobile"
+  },
+  {
+    "customer_id": "cust-1068",
+    "customer_email": "mia.ng68@example.com",
+    "customer_name": "Mia Ng",
+    "subject": "Double charged this month #69",
+    "description": "I was charged twice for the same subscription this billing cycle.",
+    "category": "billing_question",
+    "priority": "medium",
+    "status": "closed",
+    "assigned_to": "finance",
+    "tags": [
+      "payment",
+      "billing"
+    ],
+    "source": "email",
+    "browser": "Firefox",
+    "device_type": "mobile"
+  },
+  {
+    "customer_id": "cust-1069",
+    "customer_email": "oscar.petrova69@example.com",
+    "customer_name": "Oscar Petrova",
+    "subject": "Suggestion for export options #70",
+    "description": "It would be great to have a CSV export option for reports, just a minor suggestion.",
+    "category": "feature_request",
+    "priority": "high",
+    "status": "new",
+    "assigned_to": "product-team",
+    "tags": [
+      "suggestion",
+      "ui"
+    ],
+    "source": "api",
+    "browser": "Opera",
+    "device_type": "mobile"
+  }
+]

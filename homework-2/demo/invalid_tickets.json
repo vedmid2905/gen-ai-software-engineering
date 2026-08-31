@@ -1,0 +1,56 @@
+[
+  {
+    "customer_email": "bad-email",
+    "customer_name": "Broken User",
+    "subject": "Bad",
+    "description": "short",
+    "category": "unknown",
+    "priority": "critical",
+    "status": "new"
+  },
+  {
+    "customer_email": "missing.subject@example.com",
+    "customer_name": "No Subject",
+    "subject": "",
+    "description": "This description is long enough but the subject field is empty.",
+    "category": "technical_issue",
+    "priority": "high",
+    "status": "new"
+  },
+  {
+    "customer_email": "not-an-email-either",
+    "customer_name": "Invalid Email Two",
+    "subject": "Email format problem",
+    "description": "This ticket has an email address without an @ symbol or domain part.",
+    "category": "billing_question",
+    "priority": "medium",
+    "status": "new"
+  },
+  {
+    "customer_email": "bad.category@example.com",
+    "customer_name": "Bad Category",
+    "subject": "Unknown category value",
+    "description": "This ticket uses a category value that is not part of the allowed enum set.",
+    "category": "not_a_real_category",
+    "priority": "low",
+    "status": "new"
+  },
+  {
+    "customer_email": "short.desc@example.com",
+    "customer_name": "Short Description",
+    "subject": "Description too short",
+    "description": "tiny",
+    "category": "bug_report",
+    "priority": "medium",
+    "status": "new"
+  },
+  {
+    "customer_email": "malformed-json-sibling@example.com",
+    "customer_name": "Bad Status",
+    "subject": "Unknown status value",
+    "description": "This ticket uses a status value that does not exist in the Status enum.",
+    "category": "other",
+    "priority": "low",
+    "status": "archived"
+  }
+]

@@ -1,0 +1,452 @@
+<tickets>
+  <ticket>
+    <customer_id>cust-1070</customer_id>
+    <customer_email>ada.diaz70@example.com</customer_email>
+    <customer_name>Ada Diaz</customer_name>
+    <subject>Cosmetic bug in the sidebar #71</subject>
+    <description>There is a minor cosmetic bug where the sidebar icon is misaligned.</description>
+    <category>bug_report</category>
+    <priority>urgent</priority>
+    <status>in_progress</status>
+    <assigned_to>qa-team</assigned_to>
+    <tags>upload,regression</tags>
+    <source>phone</source>
+    <browser>Chrome</browser>
+    <device_type>tablet</device_type>
+  </ticket>
+  <ticket>
+    <customer_id>cust-1071</customer_id>
+    <customer_email>felix.tanaka71@example.com</customer_email>
+    <customer_name>Felix Tanaka</customer_name>
+    <subject>Question about documentation #72</subject>
+    <description>I could not find documentation about a specific API parameter.</description>
+    <category>other</category>
+    <priority>low</priority>
+    <status>new</status>
+    <assigned_to>support-team</assigned_to>
+    <tags>feedback,inquiry</tags>
+    <source>chat</source>
+    <browser>Edge</browser>
+    <device_type>tablet</device_type>
+  </ticket>
+  <ticket>
+    <customer_id>cust-1072</customer_id>
+    <customer_email>nora.hassan72@example.com</customer_email>
+    <customer_name>Nora Hassan</customer_name>
+    <subject>Two-factor codes never arrive #73</subject>
+    <description>I never receive the two-factor authentication codes by SMS so I cannot log in.</description>
+    <category>account_access</category>
+    <priority>high</priority>
+    <status>resolved</status>
+    <assigned_to>security-team</assigned_to>
+    <tags>security,password</tags>
+    <source>chat</source>
+    <browser>Edge</browser>
+    <device_type>desktop</device_type>
+  </ticket>
+  <ticket>
+    <customer_id>cust-1073</customer_id>
+    <customer_email>hugo.okafor73@example.com</customer_email>
+    <customer_name>Hugo Okafor</customer_name>
+    <subject>Production down for our team #74</subject>
+    <description>Our production environment is down and this is a critical outage affecting all users.</description>
+    <category>technical_issue</category>
+    <priority>medium</priority>
+    <status>resolved</status>
+    <assigned_to>engineering</assigned_to>
+    <tags>crash,sync</tags>
+    <source>email</source>
+    <browser>Opera</browser>
+    <device_type>tablet</device_type>
+  </ticket>
+  <ticket>
+    <customer_id>cust-1074</customer_id>
+    <customer_email>lena.singh74@example.com</customer_email>
+    <customer_name>Lena Singh</customer_name>
+    <subject>Payment failed #75</subject>
+    <description>My latest payment failed and I need a refund processed as soon as possible.</description>
+    <category>billing_question</category>
+    <priority>low</priority>
+    <status>closed</status>
+    <assigned_to>finance</assigned_to>
+    <tags>payment,billing</tags>
+    <source>chat</source>
+    <browser>Firefox</browser>
+    <device_type>mobile</device_type>
+  </ticket>
+  <ticket>
+    <customer_id>cust-1075</customer_id>
+    <customer_email>kai.novak75@example.com</customer_email>
+    <customer_name>Kai Novak</customer_name>
+    <subject>Suggestion for export options #76</subject>
+    <description>It would be great to have a CSV export option for reports, just a minor suggestion.</description>
+    <category>feature_request</category>
+    <priority>urgent</priority>
+    <status>waiting_customer</status>
+    <assigned_to>product-team</assigned_to>
+    <tags>suggestion,ui</tags>
+    <source>email</source>
+    <browser>Edge</browser>
+    <device_type>mobile</device_type>
+  </ticket>
+  <ticket>
+    <customer_id>cust-1076</customer_id>
+    <customer_email>ruth.silva76@example.com</customer_email>
+    <customer_name>Ruth Silva</customer_name>
+    <subject>Bug report: broken pagination #77</subject>
+    <description>Pagination on the tickets list is broken and always shows the first page.</description>
+    <category>bug_report</category>
+    <priority>low</priority>
+    <status>waiting_customer</status>
+    <assigned_to>qa-team</assigned_to>
+    <tags>upload,regression</tags>
+    <source>web_form</source>
+    <browser>Edge</browser>
+    <device_type>desktop</device_type>
+  </ticket>
+  <ticket>
+    <customer_id>cust-1077</customer_id>
+    <customer_email>victor.cohen77@example.com</customer_email>
+    <customer_name>Victor Cohen</customer_name>
+    <subject>Miscellaneous request #78</subject>
+    <description>I have a request that does not really fit any other category.</description>
+    <category>other</category>
+    <priority>urgent</priority>
+    <status>waiting_customer</status>
+    <assigned_to>support-team</assigned_to>
+    <tags>general,inquiry</tags>
+    <source>web_form</source>
+    <browser>Chrome</browser>
+    <device_type>desktop</device_type>
+  </ticket>
+  <ticket>
+    <customer_id>cust-1078</customer_id>
+    <customer_email>amara.park78@example.com</customer_email>
+    <customer_name>Amara Park</customer_name>
+    <subject>Locked out after 2FA change #79</subject>
+    <description>I changed my two-factor authentication device and now I can't access my account at all.</description>
+    <category>account_access</category>
+    <priority>urgent</priority>
+    <status>closed</status>
+    <assigned_to>security-team</assigned_to>
+    <tags>security,login</tags>
+    <source>email</source>
+    <browser>Edge</browser>
+    <device_type>tablet</device_type>
+  </ticket>
+  <ticket>
+    <customer_id>cust-1079</customer_id>
+    <customer_email>owen.bianchi79@example.com</customer_email>
+    <customer_name>Owen Bianchi</customer_name>
+    <subject>App crash on startup #80</subject>
+    <description>The app crashes every time I start it, even after reinstalling.</description>
+    <category>technical_issue</category>
+    <priority>high</priority>
+    <status>resolved</status>
+    <assigned_to>engineering</assigned_to>
+    <tags>performance,crash</tags>
+    <source>email</source>
+    <browser>Opera</browser>
+    <device_type>tablet</device_type>
+  </ticket>
+  <ticket>
+    <customer_id>cust-1080</customer_id>
+    <customer_email>jane.doe80@example.com</customer_email>
+    <customer_name>Jane Doe</customer_name>
+    <subject>Payment failed #81</subject>
+    <description>My latest payment failed and I need a refund processed as soon as possible.</description>
+    <category>billing_question</category>
+    <priority>high</priority>
+    <status>waiting_customer</status>
+    <assigned_to>finance</assigned_to>
+    <tags>payment,invoice</tags>
+    <source>web_form</source>
+    <browser>Safari</browser>
+    <device_type>tablet</device_type>
+  </ticket>
+  <ticket>
+    <customer_id>cust-1081</customer_id>
+    <customer_email>john.smith81@example.com</customer_email>
+    <customer_name>John Smith</customer_name>
+    <subject>Bulk edit feature request #82</subject>
+    <description>A bulk edit feature for tickets would save our team a lot of time.</description>
+    <category>feature_request</category>
+    <priority>low</priority>
+    <status>in_progress</status>
+    <assigned_to>product-team</assigned_to>
+    <tags>feature,enhancement</tags>
+    <source>email</source>
+    <browser>Chrome</browser>
+    <device_type>tablet</device_type>
+  </ticket>
+  <ticket>
+    <customer_id>cust-1082</customer_id>
+    <customer_email>anna.lee82@example.com</customer_email>
+    <customer_name>Anna Lee</customer_name>
+    <subject>Bug report: broken pagination #83</subject>
+    <description>Pagination on the tickets list is broken and always shows the first page.</description>
+    <category>bug_report</category>
+    <priority>urgent</priority>
+    <status>closed</status>
+    <assigned_to>qa-team</assigned_to>
+    <tags>bug,regression</tags>
+    <source>phone</source>
+    <browser>Edge</browser>
+    <device_type>tablet</device_type>
+  </ticket>
+  <ticket>
+    <customer_id>cust-1083</customer_id>
+    <customer_email>mike.brown83@example.com</customer_email>
+    <customer_name>Mike Brown</customer_name>
+    <subject>Partnership inquiry #84</subject>
+    <description>I am reaching out to ask about potential partnership opportunities.</description>
+    <category>other</category>
+    <priority>urgent</priority>
+    <status>closed</status>
+    <assigned_to>support-team</assigned_to>
+    <tags>inquiry,feedback</tags>
+    <source>web_form</source>
+    <browser>Edge</browser>
+    <device_type>mobile</device_type>
+  </ticket>
+  <ticket>
+    <customer_id>cust-1084</customer_id>
+    <customer_email>sara.green84@example.com</customer_email>
+    <customer_name>Sara Green</customer_name>
+    <subject>Cannot access my account #85</subject>
+    <description>I cannot sign in because my password was reset and I still cannot access my account.</description>
+    <category>account_access</category>
+    <priority>low</priority>
+    <status>waiting_customer</status>
+    <assigned_to>security-team</assigned_to>
+    <tags>password,2fa</tags>
+    <source>email</source>
+    <browser>Edge</browser>
+    <device_type>desktop</device_type>
+  </ticket>
+  <ticket>
+    <customer_id>cust-1085</customer_id>
+    <customer_email>li.chen85@example.com</customer_email>
+    <customer_name>Li Chen</customer_name>
+    <subject>Slow performance during peak hours #86</subject>
+    <description>The application becomes extremely slow and unresponsive during peak business hours.</description>
+    <category>technical_issue</category>
+    <priority>medium</priority>
+    <status>closed</status>
+    <assigned_to>engineering</assigned_to>
+    <tags>sync,crash</tags>
+    <source>chat</source>
+    <browser>Opera</browser>
+    <device_type>mobile</device_type>
+  </ticket>
+  <ticket>
+    <customer_id>cust-1086</customer_id>
+    <customer_email>omar.west86@example.com</customer_email>
+    <customer_name>Omar West</customer_name>
+    <subject>Double charged this month #87</subject>
+    <description>I was charged twice for the same subscription this billing cycle.</description>
+    <category>billing_question</category>
+    <priority>high</priority>
+    <status>new</status>
+    <assigned_to>finance</assigned_to>
+    <tags>invoice,refund</tags>
+    <source>email</source>
+    <browser>Edge</browser>
+    <device_type>tablet</device_type>
+  </ticket>
+  <ticket>
+    <customer_id>cust-1087</customer_id>
+    <customer_email>grace.kim87@example.com</customer_email>
+    <customer_name>Grace Kim</customer_name>
+    <subject>Idea: custom notification rules #88</subject>
+    <description>It would be nice to configure custom notification rules per project.</description>
+    <category>feature_request</category>
+    <priority>low</priority>
+    <status>waiting_customer</status>
+    <assigned_to>product-team</assigned_to>
+    <tags>feature,ui</tags>
+    <source>api</source>
+    <browser>Firefox</browser>
+    <device_type>mobile</device_type>
+  </ticket>
+  <ticket>
+    <customer_id>cust-1088</customer_id>
+    <customer_email>tom.ng88@example.com</customer_email>
+    <customer_name>Tom Ng</customer_name>
+    <subject>Bug: filters reset unexpectedly #89</subject>
+    <description>The category filters reset to default every time I navigate away from the page.</description>
+    <category>bug_report</category>
+    <priority>medium</priority>
+    <status>waiting_customer</status>
+    <assigned_to>qa-team</assigned_to>
+    <tags>defect,regression</tags>
+    <source>phone</source>
+    <browser>Safari</browser>
+    <device_type>tablet</device_type>
+  </ticket>
+  <ticket>
+    <customer_id>cust-1089</customer_id>
+    <customer_email>elena.petrova89@example.com</customer_email>
+    <customer_name>Elena Petrova</customer_name>
+    <subject>General inquiry #90</subject>
+    <description>I have a general question about how your service works, nothing urgent.</description>
+    <category>other</category>
+    <priority>high</priority>
+    <status>new</status>
+    <assigned_to>support-team</assigned_to>
+    <tags>general,feedback</tags>
+    <source>chat</source>
+    <browser>Opera</browser>
+    <device_type>desktop</device_type>
+  </ticket>
+  <ticket>
+    <customer_id>cust-1090</customer_id>
+    <customer_email>carlos.diaz90@example.com</customer_email>
+    <customer_name>Carlos Diaz</customer_name>
+    <subject>Security alert on my account #91</subject>
+    <description>I received a security alert about a login attempt I did not make, this is critical.</description>
+    <category>account_access</category>
+    <priority>low</priority>
+    <status>resolved</status>
+    <assigned_to>security-team</assigned_to>
+    <tags>login,password</tags>
+    <source>api</source>
+    <browser>Firefox</browser>
+    <device_type>mobile</device_type>
+  </ticket>
+  <ticket>
+    <customer_id>cust-1091</customer_id>
+    <customer_email>yuki.tanaka91@example.com</customer_email>
+    <customer_name>Yuki Tanaka</customer_name>
+    <subject>Dashboard fails to load #92</subject>
+    <description>The dashboard shows a blank white screen and never finishes loading.</description>
+    <category>technical_issue</category>
+    <priority>medium</priority>
+    <status>closed</status>
+    <assigned_to>engineering</assigned_to>
+    <tags>performance,crash</tags>
+    <source>phone</source>
+    <browser>Opera</browser>
+    <device_type>mobile</device_type>
+  </ticket>
+  <ticket>
+    <customer_id>cust-1092</customer_id>
+    <customer_email>fatima.hassan92@example.com</customer_email>
+    <customer_name>Fatima Hassan</customer_name>
+    <subject>Refund request for cancelled plan #93</subject>
+    <description>I cancelled my plan last week but have not received my refund yet.</description>
+    <category>billing_question</category>
+    <priority>medium</priority>
+    <status>waiting_customer</status>
+    <assigned_to>finance</assigned_to>
+    <tags>billing,refund</tags>
+    <source>api</source>
+    <browser>Safari</browser>
+    <device_type>desktop</device_type>
+  </ticket>
+  <ticket>
+    <customer_id>cust-1093</customer_id>
+    <customer_email>noah.okafor93@example.com</customer_email>
+    <customer_name>Noah Okafor</customer_name>
+    <subject>Need a new feature #94</subject>
+    <description>I would like a dark mode option added to the application settings.</description>
+    <category>feature_request</category>
+    <priority>high</priority>
+    <status>waiting_customer</status>
+    <assigned_to>product-team</assigned_to>
+    <tags>feature,enhancement</tags>
+    <source>phone</source>
+    <browser>Firefox</browser>
+    <device_type>desktop</device_type>
+  </ticket>
+  <ticket>
+    <customer_id>cust-1094</customer_id>
+    <customer_email>priya.singh94@example.com</customer_email>
+    <customer_name>Priya Singh</customer_name>
+    <subject>Bug: filters reset unexpectedly #95</subject>
+    <description>The category filters reset to default every time I navigate away from the page.</description>
+    <category>bug_report</category>
+    <priority>low</priority>
+    <status>waiting_customer</status>
+    <assigned_to>qa-team</assigned_to>
+    <tags>defect,bug</tags>
+    <source>email</source>
+    <browser>Safari</browser>
+    <device_type>desktop</device_type>
+  </ticket>
+  <ticket>
+    <customer_id>cust-1095</customer_id>
+    <customer_email>leo.novak95@example.com</customer_email>
+    <customer_name>Leo Novak</customer_name>
+    <subject>Partnership inquiry #96</subject>
+    <description>I am reaching out to ask about potential partnership opportunities.</description>
+    <category>other</category>
+    <priority>high</priority>
+    <status>waiting_customer</status>
+    <assigned_to>support-team</assigned_to>
+    <tags>general,inquiry</tags>
+    <source>api</source>
+    <browser>Chrome</browser>
+    <device_type>desktop</device_type>
+  </ticket>
+  <ticket>
+    <customer_id>cust-1096</customer_id>
+    <customer_email>maria.silva96@example.com</customer_email>
+    <customer_name>Maria Silva</customer_name>
+    <subject>Two-factor codes never arrive #97</subject>
+    <description>I never receive the two-factor authentication codes by SMS so I cannot log in.</description>
+    <category>account_access</category>
+    <priority>medium</priority>
+    <status>in_progress</status>
+    <assigned_to>security-team</assigned_to>
+    <tags>password,login</tags>
+    <source>web_form</source>
+    <browser>Opera</browser>
+    <device_type>mobile</device_type>
+  </ticket>
+  <ticket>
+    <customer_id>cust-1097</customer_id>
+    <customer_email>sam.cohen97@example.com</customer_email>
+    <customer_name>Sam Cohen</customer_name>
+    <subject>Production down for our team #98</subject>
+    <description>Our production environment is down and this is a critical outage affecting all users.</description>
+    <category>technical_issue</category>
+    <priority>low</priority>
+    <status>resolved</status>
+    <assigned_to>engineering</assigned_to>
+    <tags>performance,error</tags>
+    <source>web_form</source>
+    <browser>Safari</browser>
+    <device_type>mobile</device_type>
+  </ticket>
+  <ticket>
+    <customer_id>cust-1098</customer_id>
+    <customer_email>ivy.park98@example.com</customer_email>
+    <customer_name>Ivy Park</customer_name>
+    <subject>Payment failed #99</subject>
+    <description>My latest payment failed and I need a refund processed as soon as possible.</description>
+    <category>billing_question</category>
+    <priority>urgent</priority>
+    <status>resolved</status>
+    <assigned_to>finance</assigned_to>
+    <tags>billing,payment</tags>
+    <source>phone</source>
+    <browser>Chrome</browser>
+    <device_type>desktop</device_type>
+  </ticket>
+  <ticket>
+    <customer_id>cust-1099</customer_id>
+    <customer_email>ben.bianchi99@example.com</customer_email>
+    <customer_name>Ben Bianchi</customer_name>
+    <subject>Suggestion for export options #100</subject>
+    <description>It would be great to have a CSV export option for reports, just a minor suggestion.</description>
+    <category>feature_request</category>
+    <priority>medium</priority>
+    <status>new</status>
+    <assigned_to>product-team</assigned_to>
+    <tags>ui,feature</tags>
+    <source>phone</source>
+    <browser>Edge</browser>
+    <device_type>tablet</device_type>
+  </ticket>
+</tickets>
