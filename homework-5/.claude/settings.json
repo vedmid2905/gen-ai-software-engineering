@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c ' *)",
+      "Bash(python3 -c ' *)",
+      "Bash(pip show *)",
+      "Read(//d//**)",
+      "Bash(mkdir -p /d/gen-ai-software-engineering/homework-5/custom-mcp-server)"
+    ],
+    "additionalDirectories": [
+      "D:\\gen-ai-software-engineering\\homework-5"
+    ]
+  }
+}
